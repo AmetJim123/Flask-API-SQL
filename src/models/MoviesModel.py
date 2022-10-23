@@ -30,7 +30,8 @@ class MoviesModel:
             connection = get_connection()
 
             with connection.cursor() as cursor:
-                cursor.execute("SELECT id, title, duration, released FROM movies WHERE id = %s",(id,))
+                cursor.execute(
+                    "SELECT id, title, duration, released FROM movies WHERE id = %s", (id,))
                 row = cursor.fetchone()
 
                 movie = None
